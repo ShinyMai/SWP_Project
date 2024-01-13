@@ -61,20 +61,6 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String rememberMe = request.getParameter("remember");
@@ -108,19 +94,33 @@ public class LoginController extends HttpServlet {
             session.setAttribute("acc", a);
             session.setMaxInactiveInterval(100000);
             if(a.role_id == 1){
-                request.getRequestDispatcher("academicStaff/home.jsp").forward(request, response);
+               response.sendRedirect("academicStaff/home.jsp");
             }
             if(a.role_id == 2){
-                request.getRequestDispatcher("admin/home.jsp").forward(request, response);
+                response.sendRedirect("admin/home.jsp");
             }
             if(a.role_id == 3){
-                request.getRequestDispatcher("instructor/home.jsp").forward(request, response);
+                response.sendRedirect("instructor/home.jsp");
             }
             if(a.role_id == 4){
-                request.getRequestDispatcher("student/home.jsp").forward(request, response);
+                response.sendRedirect("student/home.jsp");
             }
         }
                
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
     }
 
     /**

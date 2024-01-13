@@ -10,6 +10,7 @@
     </head>
     <body>
         <div class="container">
+            <%@include file="./navbar.jsp" %> 
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
