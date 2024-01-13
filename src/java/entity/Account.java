@@ -9,8 +9,8 @@ package entity;
  * @author HP
  */
 public class Account {
-    private String userName, password, student_id, instructor_id;
-    private int role_id, account_id;
+    public String userName, password, student_id, instructor_id;
+    public int role_id, account_id;
 
     public Account() {
     }

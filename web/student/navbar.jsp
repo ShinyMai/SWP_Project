@@ -22,9 +22,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+                        <c:if test ="${sessionScope.acc != null}">
+                            <ul class="navbar-nav">                    
+                                <li class="nav-item">
+                                    <a style="font-size:20px" class="nav-link" href="logout">Logout</a>
+                                </li>
+                            </ul>
+                        </c:if>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                             <ul class="dropdown-menu">

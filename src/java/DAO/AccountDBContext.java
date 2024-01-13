@@ -63,6 +63,6 @@ public class AccountDBContext extends DBContext {
     
     public static void main(String[] args) {
         AccountDBContext da = new AccountDBContext();
-        System.out.println(da.ValidateAccount("a1", "123"));
+        System.out.println(da.getAccountIdByUsername("a3"));
     }
 }

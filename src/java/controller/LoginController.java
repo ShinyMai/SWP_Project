@@ -88,7 +88,7 @@ public class LoginController extends HttpServlet {
             cpass.setMaxAge(60*60*24*1);
             crmb.setMaxAge(60*60*24*1);
         }else{
-            cuser.setMaxAge(0);//1 ngay
+            cuser.setMaxAge(0);
             cpass.setMaxAge(0);
             crmb.setMaxAge(0);
         }
@@ -96,6 +96,7 @@ public class LoginController extends HttpServlet {
         response.addCookie(cuser);
         response.addCookie(cpass);
         response.addCookie(crmb);
+        
         AccountDBContext DAO = new AccountDBContext();
         Account a = DAO.ValidateAccount(username, password);
         
@@ -106,7 +107,18 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
             session.setMaxInactiveInterval(100000);
-            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            if(a.role_id == 1){
+                request.getRequestDispatcher("academicStaff/home.jsp").forward(request, response);
+            }
+            if(a.role_id == 2){
+                request.getRequestDispatcher("admin/home.jsp").forward(request, response);
+            }
+            if(a.role_id == 3){
+                request.getRequestDispatcher("instructor/home.jsp").forward(request, response);
+            }
+            if(a.role_id == 4){
+                request.getRequestDispatcher("student/home.jsp").forward(request, response);
+            }
         }
                
     }
