@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
-                                <form class="signin-form" action="login" method="get" >
+                                <form class="signin-form" action="login" method="post" >
                                      <p class="text-danger" >${mess}</p>
                                     <div class="form-group mb-3">
                                         <label class="label" for="name">Username</label>
