@@ -4,17 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Java/AttendanceSystem/src/java/entity/Account.java</file>
-            <file>file:/D:/Java/AttendanceSystem/web/academicStaff/navbar.jsp</file>
-            <file>file:/D:/Java/AttendanceSystem/src/java/DAO/AttendanceDBContext.java</file>
             <file>file:/D:/Java/AttendanceSystem/src/java/entity/Instructor.java</file>
             <file>file:/D:/Java/AttendanceSystem/src/java/DAO/AccountDBContext.java</file>
-            <file>file:/D:/Java/AttendanceSystem/web/admin/navbar.jsp</file>
-            <file>file:/D:/Java/AttendanceSystem/src/java/controller/LogoutAdmin.java</file>
             <file>file:/D:/Java/AttendanceSystem/src/java/controller/LogoutController.java</file>
-            <file>file:/D:/Java/AttendanceSystem/web/admin/welcome.jsp</file>
             <file>file:/D:/Java/AttendanceSystem/web/Login.jsp</file>
-            <file>file:/D:/Java/AttendanceSystem/web/modal/logoutModal.jsp</file>
-            <file>file:/D:/Java/AttendanceSystem/src/java/controller/LoginController.java</file>
+            <file>file:/D:/Java/AttendanceSystem/src/java/DAO/DBContext.java</file>
+            <file>file:/D:/Java/AttendanceSystem/web/welcome.jsp</file>
+            <file>file:/D:/Java/AttendanceSystem/src/java/DAO/SessionDBContext.java</file>
         </group>
     </open-files>
 </project-private>

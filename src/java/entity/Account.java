@@ -10,7 +10,7 @@ package entity;
  */
 public class Account extends BaseEntity{
     public String username, password, student_id, instructor_id;
-    public int role_id, account_id;
+    public int role_id;
     public Instructor instructor;
 
     public Account() {
@@ -20,11 +20,10 @@ public class Account extends BaseEntity{
         this.instructor = instructor;
     }
 
-    public Account(String username, String password, int role_id, int account_id) {
+    public Account(String username, String password, int role_id) {
         this.username = username;
         this.password = password;
         this.role_id = role_id;
-        this.account_id = account_id;
     }
 
     public Account(String student_id, String instructor_id) {
@@ -56,14 +55,6 @@ public class Account extends BaseEntity{
         this.role_id = role_id;
     }
 
-    public int getAccount_id() {
-        return account_id;
-    }
-
-    public void setAccount_id(int account_id) {
-        this.account_id = account_id;
-    }
-
     public String getStudent_id() {
         return student_id;
     }
@@ -90,7 +81,7 @@ public class Account extends BaseEntity{
 
     @Override
     public String toString() {
-        return "Account{" + "username=" + username + ", password=" + password + ", student_id=" + student_id + ", instructor_id=" + instructor_id + ", role_id=" + role_id + ", account_id=" + account_id + ", instructor=" + instructor + '}';
+        return "Account{" + "username=" + username + ", password=" + password + ", student_id=" + student_id + ", instructor_id=" + instructor_id + ", role_id=" + role_id + ", instructor=" + instructor + '}';
     }
     
     

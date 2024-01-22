@@ -27,8 +27,7 @@ public class AccountDBContext extends DBContext {
                 acc = new Account(
                         rs.getString("username"),
                         rs.getString("password"),
-                        rs.getInt("role_id"),
-                        rs.getInt("account_id")
+                        rs.getInt("role_id")
                         );
                 return acc;
             }
@@ -63,6 +62,6 @@ public class AccountDBContext extends DBContext {
     
     public static void main(String[] args) {
         AccountDBContext da = new AccountDBContext();
-        System.out.println(da.getAccountIdByUsername("a3"));
+        System.out.println(da.ValidateAccount("admin", "123"));
     }
 }

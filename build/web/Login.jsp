@@ -11,11 +11,8 @@
         <title>Login Form</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/5.0.0/css/font-awesome.min.css">
-
         <link rel="stylesheet" href="css/styleLogin.css">
 
     </head>
@@ -29,7 +26,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-10">
                         <div class="wrap d-md-flex">
-                            <div class="img" style="background-image: url(images/bg-1.jpg);">
+                            <div class="img" style="background-image: url(images/bg-2.jpg);">
                             </div>
                             <div class="login-wrap p-4 p-md-5">
                                 <div class="d-flex">
@@ -41,17 +38,20 @@
                                 </div>
                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
                                 <form class="signin-form" action="login" method="post" >
-                                     <p class="text-danger" >${mess}</p>
+                                    <p class="text-danger" >${mess}</p>
                                     <div class="form-group mb-3">
                                         <label class="label" for="name">Username</label>
-                                        <input  name="username" type="text" value="${cookie.cuser.value}" class="form-control" placeholder="Username" required>
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label class="label" for="password">Password</label>
-                                        <input name="password" type="password" value="${cookie.cpass.value}" class="form-control" placeholder="Password" required>
+                                        <input name="username" type="text" value="${cookie.cuser.value}" class="form-control" placeholder="Username" required>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                                        <label class="label" for="password">Password</label>    
+                                        <img id="passicon" src="images/close-eye.jpg" style="width: 25px; position: absolute; 
+                                             cursor: pointer; top: 50px; right: 15px" onclick="togglePassword()">
+                                        <input name="password" type="password" value="${cookie.cpass.value}" 
+                                               id="password" class="form-control" placeholder="Password" required>                                       
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" style="color: blue"class="form-control btn btn-primary rounded submit px-3">Sign In</button>
                                     </div>
                                     <div class="form-group d-md-flex">
                                         <div class="w-50 text-left">
@@ -77,6 +77,20 @@
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script>
+            function togglePassword() {
+                var passwordInput = document.getElementById("password");
+                var passwordIcon = document.getElementById("passicon");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    passwordIcon.src = "images/open-eye.jpg";
+                } else {
+                    passwordInput.type = "password";
+                    passwordIcon.src = "images/close-eye.jpg";
+                }
+            }
+        </script>
 
     </body>
 </html>

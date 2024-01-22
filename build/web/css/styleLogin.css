@@ -166,9 +166,7 @@ pre {
 figure {
   margin: 0 0 1rem; }
 
-img {
-  vertical-align: middle;
-  border-style: none; }
+
 
 svg {
   overflow: hidden;
@@ -1590,6 +1588,27 @@ pre {
   .table-responsive > .table-bordered {
     border: 0; }
 
+.password{
+      display: inline-block;
+      position: relative;
+      border: 1px solid #ced4da;
+  }
+  
+.password input{
+      padding: 10px 5px;
+      outline: none;
+      border: 0;
+  }
+  
+.pass-icon{
+      position: absolute;
+      top: 3px;
+      height: 30px;
+      width: 30px;
+      left: 20%;
+      cursor: pointer;
+  }
+
 .form-control {
   display: block;
   width: 100%;
@@ -1703,7 +1722,8 @@ textarea.form-control {
   height: auto; }
 
 .form-group {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  display: inline-block; }
 
 .form-text {
   display: block;
@@ -8147,7 +8167,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #e3b04b; }
+  color: blue; }
   a:hover, a:focus {
     text-decoration: none !important;
     outline: none !important;
@@ -8162,7 +8182,7 @@ h1, h2, h3, h4, h5,
   color: #000; }
 
 .bg-primary {
-  background: #e3b04b !important; }
+  background: blue !important; }
 
 .ftco-section {
   padding: 7em 0; }
@@ -8208,7 +8228,7 @@ h1, h2, h3, h4, h5,
 
 .form-group {
   position: relative; }
-  .form-group .label {
+  .mlabel {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -8242,7 +8262,7 @@ h1, h2, h3, h4, h5,
     outline: none !important;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #e3b04b; }
+    border: 1px solid blue; }
 
 .social-media {
   position: relative;
@@ -8259,7 +8279,7 @@ h1, h2, h3, h4, h5,
     .social-media .social-icon span {
       color: #999999; }
     .social-media .social-icon:hover, .social-media .social-icon:focus {
-      background: #e3b04b; }
+      background: blue; }
       .social-media .social-icon:hover span, .social-media .social-icon:focus span {
         color: #fff; }
 
@@ -8325,9 +8345,9 @@ background: #eee;
 
 /* Style the checkmark/indicator */
 .checkbox-primary {
-  color: #e3b04b; }
+  color: blue; }
   .checkbox-primary input:checked ~ .checkmark:after {
-    color: #e3b04b; }
+    color: blue; }
 
 .btn {
   cursor: pointer;
@@ -8338,18 +8358,18 @@ background: #eee;
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #e3b04b !important;
-    border: 1px solid #e3b04b !important;
+    background: blue !important;
+    border: 1px solid blue !important;
     color: #fff !important; }
     .btn.btn-primary:hover {
-      border: 1px solid #e3b04b;
+      border: 1px solid blue;
       background: transparent;
-      color: #e3b04b; }
+      color: blue; }
     .btn.btn-primary.btn-outline-primary {
-      border: 1px solid #e3b04b;
+      border: 1px solid blue;
       background: transparent;
-      color: #e3b04b; }
+      color: blue; }
       .btn.btn-primary.btn-outline-primary:hover {
         border: 1px solid transparent;
-        background: #e3b04b;
+        background: blue;
         color: #fff; }
