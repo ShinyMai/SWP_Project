@@ -4,7 +4,7 @@
  */
 package controller;
 
-import DAO.AccountDBContext;
+import dal.AccountDBContext;
 import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -94,7 +94,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-               
+        processRequest(request, response);
     }
 
     /**

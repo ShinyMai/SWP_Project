@@ -4,7 +4,6 @@
  */
 package entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -12,33 +11,24 @@ import java.util.Date;
  * @author leduy
  */
 public class Attendance extends BaseEntity {
-    private int att_id;
-    private String student_id;
-    private int session_id;
-    private boolean status;
-    private Date att_datetime;
-    private String att_description;
-    private Student student;
+    
     private Session session;
+    private Student student;
+    private boolean status;
+    private Group group;
+    private String description;
+    private Date datetime;
 
     public Attendance() {
     }
 
-    public Attendance(int att_id, String student_id, int session_id, boolean status, Date att_datetime, String att_description) {
-        this.att_id = att_id;
-        this.student_id = student_id;
-        this.session_id = session_id;
-        this.status = status;
-        this.att_datetime = att_datetime;
-        this.att_description = att_description;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
+    public Attendance(Session session, Student student, boolean status, Group group, String description, Date datetime) {
+        this.session = session;
         this.student = student;
+        this.status = status;
+        this.group = group;
+        this.description = description;
+        this.datetime = datetime;
     }
 
     public Session getSession() {
@@ -49,28 +39,36 @@ public class Attendance extends BaseEntity {
         this.session = session;
     }
 
-    public int getAtt_id() {
-        return att_id;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setAtt_id(int att_id) {
-        this.att_id = att_id;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public String getStudent_id() {
-        return student_id;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setStudent_id(String student_id) {
-        this.student_id = student_id;
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
-    public int getSession_id() {
-        return session_id;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSession_id(int session_id) {
-        this.session_id = session_id;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
     }
 
     public boolean isStatus() {
@@ -80,21 +78,6 @@ public class Attendance extends BaseEntity {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
-    public Date getAtt_datetime() {
-        return att_datetime;
-    }
-
-    public void setAtt_datetime(Date att_datetime) {
-        this.att_datetime = att_datetime;
-    }
-
-    public String getAtt_description() {
-        return att_description;
-    }
-
-    public void setAtt_description(String att_description) {
-        this.att_description = att_description;
-    }
+    
     
 }

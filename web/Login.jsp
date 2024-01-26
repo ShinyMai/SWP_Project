@@ -39,21 +39,33 @@
                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
                                 <form class="signin-form" action="login" method="post" >
                                     <p class="text-danger" >${mess}</p>
-                                    <div class="form-group mb-3">
+                                    
+                                    <div style="position: relative" >
                                         <label class="label" for="name">Username</label>
-                                        <input name="username" type="text" value="${cookie.cuser.value}" class="form-control" placeholder="Username" required>
+                                        <input name="username" type="text" value="${cookie.cuser.value}" class="form-control" placeholder="Username">
                                     </div>
-                                    <div class="form-group">
+                                    
+                                    <div style="position: relative">
                                         <label class="label" for="password">Password</label>    
-                                        <img id="passicon" src="images/close-eye.jpg" style="width: 25px; position: absolute; 
+                                        <img id="passicon" src="images/close-eye.jpg" style="width: 25px; position: absolute;
                                              cursor: pointer; top: 50px; right: 15px" onclick="togglePassword()">
                                         <input name="password" type="password" value="${cookie.cpass.value}" 
-                                               id="password" class="form-control" placeholder="Password" required>                                       
+                                               id="password" class="form-control" placeholder="Password">                                       
                                     </div>
-                                    <div class="form-group">
+                                               
+                                    <div style="position: relative; top:4px">
                                         <button type="submit" style="color: blue"class="form-control btn btn-primary rounded submit px-3">Sign In</button>
                                     </div>
-                                    <div class="form-group d-md-flex">
+                                               
+                                    <h5 style="text-align: center; color: grey; position: relative; top:5px">OR</h5>
+                                    
+                                    <div>
+                                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile%20openid&redirect_uri=http://localhost:9999/AttendanceSystem/LoginGoogleHandler&response_type=code
+                                                &client_id=105080679537-2ard711gqiernlhfflh57gv5jm6tt3sm.apps.googleusercontent.com&approval_prompt=force"
+                                                style="color: #004085"class="form-control btn btn-primary rounded submit px-3">Login with Google</a>
+                                    </div>
+                                    
+                                    <div class="form-group d-md-flex" style="position: relative;top:3px">
                                         <div class="w-50 text-left">
                                             <label class="form-check">
                                                 <input class="form-check-input" name="remember"
@@ -62,7 +74,7 @@
                                             </label>
                                         </div>
                                         <div class="w-50 text-md-right">
-                                            <a href="#">Forgot Password</a>
+                                            <a href="#">Forgot Password</a>                   
                                         </div>
                                     </div>
                                 </form>
@@ -78,18 +90,18 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
         <script>
-            function togglePassword() {
-                var passwordInput = document.getElementById("password");
-                var passwordIcon = document.getElementById("passicon");
+                                                 function togglePassword() {
+                                                     var passwordInput = document.getElementById("password");
+                                                     var passwordIcon = document.getElementById("passicon");
 
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                    passwordIcon.src = "images/open-eye.jpg";
-                } else {
-                    passwordInput.type = "password";
-                    passwordIcon.src = "images/close-eye.jpg";
-                }
-            }
+                                                     if (passwordInput.type === "password") {
+                                                         passwordInput.type = "text";
+                                                         passwordIcon.src = "images/open-eye.jpg";
+                                                     } else {
+                                                         passwordInput.type = "password";
+                                                         passwordIcon.src = "images/close-eye.jpg";
+                                                     }
+                                                 }
         </script>
 
     </body>

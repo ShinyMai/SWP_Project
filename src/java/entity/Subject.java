@@ -11,32 +11,41 @@ import java.util.ArrayList;
  * @author leduy
  */
 public class Subject extends BaseEntity {
+
+    private String id;
+    private String name;
     private ArrayList<Session> sessions = new ArrayList<>();
-    private String subject_id;
-    private String subject_name;
 
     public Subject() {
     }
 
-    public Subject(String subject_id, String subject_name) {
-        this.subject_id = subject_id;
-        this.subject_name = subject_name;
+    public Subject(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public String getSubject_id() {
-        return subject_id;
+    public String getId() {
+        return id;
     }
 
-    public void setSubject_id(String subject_id) {
-        this.subject_id = subject_id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getSubject_name() {
-        return subject_name;
+    public String getName() {
+        return name;
     }
 
-    public void setSubject_name(String subject_name) {
-        this.subject_name = subject_name;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
     
 }

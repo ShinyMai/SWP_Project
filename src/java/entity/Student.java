@@ -6,48 +6,61 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author leduy
  */
 public class Student extends BaseEntity {
-    private ArrayList<Session> sessions = new ArrayList<>();
-    private String student_id;
-    private String student_name;
+
+    private String id;
+    private String name;
     private String username;
     private String email;
     private Date dob;
     private boolean gender;
     private boolean isDeleted;
+    private ArrayList<Session> sessions = new ArrayList<>();
+    private List<Boolean> status = new ArrayList<>();
+    private List<Boolean> attendances;
 
     public Student() {
     }
 
-    public Student(String student_id, String student_name, String username, String email, Date dob, boolean gender, boolean isDeleted) {
-        this.student_id = student_id;
-        this.student_name = student_name;
+    public Student(String id, String name, String username, String email, Date dob, boolean gender, boolean isDeleted, List<Boolean> attendances) {
+        this.id = id;
+        this.name = name;
         this.username = username;
         this.email = email;
         this.dob = dob;
         this.gender = gender;
         this.isDeleted = isDeleted;
+        this.attendances = attendances;
     }
 
-    public String getStudent_id() {
-        return student_id;
+    public ArrayList<Session> getSessions() {
+        return sessions;
     }
 
-    public void setStudent_id(String student_id) {
-        this.student_id = student_id;
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
 
-    public String getStudent_name() {
-        return student_name;
+    public String getId() {
+        return id;
     }
 
-    public void setStudent_name(String student_name) {
-        this.student_name = student_name;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -89,5 +102,21 @@ public class Student extends BaseEntity {
     public void setIsDeleted(boolean isDeleted) {
         this.isDeleted = isDeleted;
     }
-    
+
+    public List<Boolean> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<Boolean> status) {
+        this.status = status;
+    }
+
+    public List<Boolean> getAttendances() {
+        return attendances;
+    }
+
+    public void setAttendances(List<Boolean> attendances) {
+        this.attendances = attendances;
+    }
+
 }

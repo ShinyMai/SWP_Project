@@ -12,21 +12,21 @@ import java.util.Date;
  * @author leduy
  */
 public class Instructor extends BaseEntity {
-    private ArrayList<Session> sessions = new ArrayList<>();
-    private String instructor_id;
-    private String instructor_name;
+    private String id;
+    private String name;
     private String username;
     private String email;
     private Date dob;
     private boolean gender;
     private boolean isDeleted;
+     private ArrayList<Session> sessions = new ArrayList<>();
 
     public Instructor() {
     }
 
-    public Instructor(String instructor_id, String instructor_name, String username, String email, Date dob, boolean gender, boolean isDeleted) {
-        this.instructor_id = instructor_id;
-        this.instructor_name = instructor_name;
+    public Instructor(String id, String name, String username, String email, Date dob, boolean gender, boolean isDeleted) {
+        this.id = id;
+        this.name = name;
         this.username = username;
         this.email = email;
         this.dob = dob;
@@ -34,20 +34,28 @@ public class Instructor extends BaseEntity {
         this.isDeleted = isDeleted;
     }
 
-    public String getInstructor_id() {
-        return instructor_id;
+    public ArrayList<Session> getSessions() {
+        return sessions;
     }
 
-    public void setInstructor_id(String instructor_id) {
-        this.instructor_id = instructor_id;
+    public void setSessions(ArrayList<Session> sessions) {
+        this.sessions = sessions;
     }
 
-    public String getInstructor_name() {
-        return instructor_name;
+    public String getId() {
+        return id;
     }
 
-    public void setInstructor_name(String instructor_name) {
-        this.instructor_name = instructor_name;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {

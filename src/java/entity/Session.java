@@ -12,28 +12,43 @@ import java.util.Date;
  * @author leduy
  */
 public class Session extends BaseEntity {
-    private int session_id;
-    private int session_index;
-    private Date session_date;
-    private String class_id;
+
+    private int id;
+    private int index;
+    private Date date;
+    private Group group;
     private boolean isAtt;
     private Instructor instructor;
     private Student student;
     private Attendance attendance;
-    private Group group;
-    private ClassSubjectMapping csm;
+    private GroupSubjectMapping gsm;
     private Subject subject;
-    private ArrayList<Attendance> atts = new ArrayList<>();
-    
+    private TimeSlot time;
+    private ArrayList<Attendance> atts= new ArrayList<>(); 
+
     public Session() {
     }
 
-    public Session(int session_id, int session_index, Date session_date, String class_id, boolean isAtt) {
-        this.session_id = session_id;
-        this.session_index = session_index;
-        this.session_date = session_date;
-        this.class_id = class_id;
+    public Session(int id, int index, Date date, Group group, boolean isAtt, Instructor instructor, Student student, Attendance attendance, GroupSubjectMapping gsm, Subject subject, TimeSlot time) {
+        this.id = id;
+        this.index = index;
+        this.date = date;
+        this.group = group;
         this.isAtt = isAtt;
+        this.instructor = instructor;
+        this.student = student;
+        this.attendance = attendance;
+        this.gsm = gsm;
+        this.subject = subject;
+        this.time = time;
+    }    
+
+    public TimeSlot getTime() {
+        return time;
+    }
+
+    public void setTime(TimeSlot time) {
+        this.time = time;
     }
 
     public ArrayList<Attendance> getAtts() {
@@ -42,6 +57,46 @@ public class Session extends BaseEntity {
 
     public void setAtts(ArrayList<Attendance> atts) {
         this.atts = atts;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public boolean isIsAtt() {
+        return isAtt;
+    }
+
+    public void setIsAtt(boolean isAtt) {
+        this.isAtt = isAtt;
     }
 
     public Instructor getInstructor() {
@@ -68,20 +123,12 @@ public class Session extends BaseEntity {
         this.attendance = attendance;
     }
 
-    public Group getGroup() {
-        return group;
+    public GroupSubjectMapping getGsm() {
+        return gsm;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-
-    public ClassSubjectMapping getCsm() {
-        return csm;
-    }
-
-    public void setCsm(ClassSubjectMapping csm) {
-        this.csm = csm;
+    public void setGsm(GroupSubjectMapping gsm) {
+        this.gsm = gsm;
     }
 
     public Subject getSubject() {
@@ -91,47 +138,11 @@ public class Session extends BaseEntity {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
+
+    
+
     
     
 
-    public int getSession_id() {
-        return session_id;
-    }
 
-    public void setSession_id(int session_id) {
-        this.session_id = session_id;
-    }
-
-    public int getSession_index() {
-        return session_index;
-    }
-
-    public void setSession_index(int session_index) {
-        this.session_index = session_index;
-    }
-
-    public Date getSession_date() {
-        return session_date;
-    }
-
-    public void setSession_date(Date session_date) {
-        this.session_date = session_date;
-    }
-
-    public String getClass_id() {
-        return class_id;
-    }
-
-    public void setClass_id(String class_id) {
-        this.class_id = class_id;
-    }
-
-    public boolean isIsAtt() {
-        return isAtt;
-    }
-
-    public void setIsAtt(boolean isAtt) {
-        this.isAtt = isAtt;
-    }
-    
 }
